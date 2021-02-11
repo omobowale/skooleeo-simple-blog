@@ -13,6 +13,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 border-b border-gray-800">
+                    {{-- Display success message --}}
+                    @if(session('success'))
+                        <div class="relative px-4 py-3 mb-5 leading-normal text-green-700 bg-green-100 rounded-lg" id="alert-icon" role="alert">
+                            <span class="absolute inset-y-0 left-0 flex items-center ml-4">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                            </span>
+                            <p class="ml-8"><span class="font-bold">Success!</span> {{session('success')}} </p>
+                        </div>
+                    @endif
                    @if(isset($posts))
                     @if(count($posts) > 0)
                     <div class="grid grid-cols-12 rounded overflow-hidden mb-5">
@@ -61,4 +70,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        document.getElementById('alert-icon').onclick = function(){
+            this.style.display = "none";
+        }
+    </script>
 </x-app-layout>

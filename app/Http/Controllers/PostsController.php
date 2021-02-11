@@ -58,7 +58,7 @@ class PostsController extends Controller
                 $post->content = $request->content;
                 $post->image_url = $image_name;
                 $post->save();
-                return redirect('/posts');
+                return redirect('/posts')->with('success', 'Post has been added');
             }
         }
 

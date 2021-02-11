@@ -7,7 +7,6 @@
     </x-slot>
 
     <x-slot name="slot">
-        {{-- <div class="min-h-screen px-0 py-6 flex flex-col justify-center sm:py-12"> --}}
         <div class="min-h-screen">
             <div class="relative py-3 sm:w-3/4 sm:mx-auto">
               <div class="relative px-4 py-10 mx-0 md:mx-auto shadow rounded-3xl sm:p-10 w-3/4">
@@ -22,12 +21,7 @@
                         </div>
                     @endif
 
-                    {{-- Display success message --}}
-                    @if(session('success')){
-                        <div class="bg-green-100 mb-5 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                        </div>
-                    @endif
-
+                    {{-- Create new post form --}}
                   <div class="flex items-center space-x-5">
                     <div class="h-14 w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono">i</div>
                     <div class="block pl-2 font-semibold text-xl text-gray-700">
@@ -65,8 +59,5 @@
             </div>
           </div>
     </x-slot>
-
-
-
 
 </x-app-layout>
